@@ -26,6 +26,30 @@ object Puzzle02 {
 
     src.close()
 
+    // Part #1
+
+    val src2 = Source.fromFile("src/main/resources/input02.txt")
+    val iter2 = src2.getLines().map(_.split(" "))
+
+    var aim: Int = 0
+    var depth: Int = 0
+    var horiz_pos: Int = 0
+    iter2 foreach (a => {
+      if (a(0) == "down") aim += a(1).toInt
+      if (a(0) == "up") aim -= a(1).toInt
+      if (a(0) == "forward") {
+        horiz_pos += a(1).toInt
+        depth += aim * a(1).toInt
+      }
+    })
+    println("aim = " + aim)
+    println("depth = " + depth)
+    println("horiz_pos = " + horiz_pos)
+
+    println("Result part #2: " + depth * horiz_pos)
+
+    src.close()
+
   }
 
   def readFile(filename: String): Seq[String] = {
