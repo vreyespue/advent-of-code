@@ -6,13 +6,29 @@ object Puzzle03 {
     println(System.getProperty("user.dir"))
 
     // Part #1
+    val nrLines =
+      io.Source.fromFile("src/main/resources/input03.txt").getLines.size
+    val nrBits = 12
+    val arrayMeasures = Array.ofDim[Int](nrLines, nrBits)
 
     val src = Source.fromFile("src/main/resources/input03.txt")
     val iter = src.getLines().map(_.split(" "))
 
+    var countLine = 0
     iter foreach (a => {
-      println(a(0).toCharArray()(0))
+      for (i <- 0 to 11) {
+        arrayMeasures(countLine)(i) = a(0).toCharArray()(i) - 48
+      }
+      countLine += 1
     })
+
+    val arraySums = Array.ofDim[Int](nrBits)
+    for (i <- 0 to 11) {
+      arraySums(i) = arrayMeasures.map(_(i)).sum
+      print(arraySums(i) + " ")
+    }
+    println()
+
     src.close()
 
     // Part #2
