@@ -31,7 +31,6 @@ object Puzzle03 {
 
     var gamma_rate: Int = 0
     var epsilon_rate: Int = 0
-
     for (i <- 0 to 11) {
       if (arraySums(11 - i) >= 500) gamma_rate += 1 * scala.math.pow(2, i).toInt
       else epsilon_rate += 1 * scala.math.pow(2, i).toInt
@@ -44,6 +43,53 @@ object Puzzle03 {
     src.close()
 
     // Part #2
+    println()
+    println(
+      "arrayMeasures.shape = " + (arrayMeasures.size, arrayMeasures(0).size)
+    )
+    println()
+
+    var oxygen = arrayMeasures
+    for (i <- 0 to 11) {
+      if (oxygen.size > 1) {
+        if (oxygen.map(_(i)).sum >= (oxygen.map(_(i)).size / 2)) {
+          oxygen = oxygen.filter(_(i) == 1)
+        } else {
+          oxygen = oxygen.filter(_(i) == 0)
+        }
+        println("oxygen.shape = " + (oxygen.size, oxygen(0).size))
+      }
+    }
+    println()
+    println("oxygen = " + oxygen(0).mkString(" "))
+    println()
+
+    var co2 = arrayMeasures
+    for (i <- 0 to 11) {
+      if (co2.size > 1) {
+        if (co2.map(_(i)).sum >= (co2.map(_(i)).size / 2)) {
+          co2 = co2.filter(_(i) == 0)
+        } else {
+          co2 = co2.filter(_(i) == 1)
+        }
+        println("co2.shape = " + (co2.size, co2(0).size))
+      }
+    }
+    println()
+    println("co2 = " + co2(0).mkString(" "))
+    println()
+
+    var oxygen_rate: Int = 0
+    var co2_rate: Int = 0
+    for (i <- 0 to 11) {
+      oxygen_rate += oxygen(0)(11 - i) * scala.math.pow(2, i).toInt
+      co2_rate += co2(0)(11 - i) * scala.math.pow(2, i).toInt
+
+    }
+    println("oxygen_rate = " + oxygen_rate)
+    println("co2_rate = " + co2_rate)
+
+    println("Result part #2: " + oxygen_rate * co2_rate)
 
   }
 
