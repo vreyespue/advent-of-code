@@ -7,11 +7,11 @@ object Puzzle03 {
 
     // Part #1
     val nrLines =
-      io.Source.fromFile("src/main/resources/input03.txt").getLines.size
+      io.Source.fromFile("../input/input03.txt").getLines.size
     val nrBits = 12
     val arrayMeasures = Array.ofDim[Int](nrLines, nrBits)
 
-    val src = Source.fromFile("src/main/resources/input03.txt")
+    val src = Source.fromFile("../input/input03.txt")
     val iter = src.getLines().map(_.split(" "))
 
     var countLine = 0

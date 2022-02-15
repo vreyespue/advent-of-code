@@ -7,7 +7,7 @@ object Puzzle02 {
 
     // Part #1
 
-    val src = Source.fromFile("src/main/resources/input02.txt")
+    val src = Source.fromFile("../input/input02.txt")
     val iter = src.getLines().map(_.split(" "))
 
     var sumDowns: Int = 0
@@ -28,7 +28,7 @@ object Puzzle02 {
 
     // Part #1
 
-    val src2 = Source.fromFile("src/main/resources/input02.txt")
+    val src2 = Source.fromFile("../input/input02.txt")
     val iter2 = src2.getLines().map(_.split(" "))
 
     var aim: Int = 0
