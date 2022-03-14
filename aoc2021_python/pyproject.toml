@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "python"
+name = "aoc2021_python"
 version = "0.1.0"
 description = ""
 authors = ["Vicente Reyes-Puerta <vr.github@outlook.com>"]
