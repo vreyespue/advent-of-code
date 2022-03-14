@@ -5,7 +5,7 @@ object Puzzle01 {
 
     // Part #1
 
-    val myListString = readFile("../input/input01.txt")
+    val myListString = readFile("../aoc2021_input/input01.txt")
     println("myListString = " + myListString)
 
     val myListLong = myListString.map(_.toLong)

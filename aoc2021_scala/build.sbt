@@ -1,4 +1,4 @@
-name := "advent_code_2021"
+name := "aoc2021_scala"
 
 version := "0.1"
 
