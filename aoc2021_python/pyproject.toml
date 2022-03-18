@@ -8,6 +8,9 @@ authors = ["Vicente Reyes-Puerta <vr.github@outlook.com>"]
 python = "^3.9"
 pandas = "^1.4.1"
 
+[tool.poetry.group.dev.dependencies]
+black = {version = "^22.1.0", allow-prereleases = true}
+
 [tool.poetry.dev-dependencies]
 
 [build-system]
