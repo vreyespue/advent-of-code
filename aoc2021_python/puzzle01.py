@@ -11,3 +11,10 @@ print(df1_diff_pos)
 print("Result part #1: " + str(df1_diff_pos.shape[0]))
 
 # Part #2
+df2 = df1.rolling(3).sum()
+print(df2)
+df2_diff = df2.diff()
+print(df2_diff)
+df2_diff_pos = df2_diff[df2_diff > 0].dropna()
+print(df2_diff_pos)
+print("Result part #2: " + str(df2_diff_pos.shape[0]))
