@@ -26,7 +26,7 @@ object Puzzle02 {
 
     src.close()
 
-    // Part #1
+    // Part #2
 
     val src2 = Source.fromFile("../aoc2021_input/input02.txt")
     val iter2 = src2.getLines().map(_.split(" "))
